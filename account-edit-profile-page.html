@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/dist/css/style.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>Netflix</title>
+</head>
+<style>
+    body {
+      background-color: #141414;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .navbar-brand {
+      color: #e50914;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .profile-img-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      background-color: #00ff7f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-radius: 10px;
+    }
+    .edit-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #000;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .form-check-input:checked {
+      background-color: #e50914;
+      border-color: #e50914;
+    }
+    .btn-outline-light:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar px-4 py-3">
+    <a class="navbar-brand" href="home.html">
+        <img src="assets/netflix_logo.png" alt="Netflix Logo" height="50" />
+      </a>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+  <h1 class="mb-4 ">Edit Profile</h1>
+  <div class="row mb-4">
+    <div class="col-md-2">
+      <div class="profile-img-wrapper">
+        <div class="profile-img"><img src="assets/kids_icon.png" alt="kids "></div>
+        <div class="edit-icon" title="Change photo">
+          ✎
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <input type="text" class="form-control mb-3" placeholder="Profile Name" value="Strive Student" />
+
+      <div class="mb-3">
+        <label class="form-label">Language:</label>
+        <select class="form-select">
+          <option selected>English</option>
+          <option>Italian</option>
+          <option>Spanish</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Maturity Settings:</label>
+        <div class="d-flex align-items-center mb-1">
+          <button class="btn btn-dark btn-sm me-2">ALL MATURITY RATINGS</button>
+          <small>Show titles of <strong>all maturity ratings</strong> for this profile.</small>
+        </div>
+        <button class="btn btn-outline-secondary btn-sm">EDIT</button>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Autoplay controls</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" checked id="autoplayEpisodes" />
+          <label class="form-check-label" for="autoplayEpisodes">
+            Autoplay next episode in a series on all devices.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" checked id="autoplayPreviews" />
+          <label class="form-check-label" for="autoplayPreviews">
+            Autoplay previews while browsing on all devices.
+          </label>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-light">SAVE</button>
+        <button class="btn btn-outline-light">CANCEL</button>
+        <button class="btn btn-outline-danger">DELETE PROFILE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
+      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

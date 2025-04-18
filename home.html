@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/dist/css/style.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>Netflix</title>
+    <style>
+      body {
+        background-color: #141414;
+        color: white;
+      }
+      .scrolling-wrapper {
+        overflow-x: auto;
+        display: flex;
+        gap: 1rem;
+      }
+      .scrolling-wrapper img {
+        width: 240px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black px-4">
+      <a class="navbar-brand" href="#">
+        <img src="assets/netflix_logo.png" alt="Netflix Logo" height="40" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">TV Shows</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My List</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex align-items-center ms-auto gap-3">
+        <a class="text-white text-decoration-none" data-bs-toggle="collapse" href="#searchBar" role="button" aria-expanded="false" aria-controls="searchBar">
+          <i class="bi bi-search"></i>
+        </a>
+
+        <i class="bi bi-bell-fill text-white"></i>
+        <div class="dropdown">
+          <a
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            href="#"
+            role="button"
+            id="profileDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="assets/avatar.png" alt="Profile" width="32" height="32" class="rounded-circle" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+          <!-- Barra di ricerca collapsabile -->
+<div class="collapse bg-dark px-4 py-3" id="searchBar">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2 bg-dark text-white border-secondary" type="search" placeholder="Search for titles..." aria-label="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+    <div class="collapse bg-dark px-4 py-3 mt-2" id="searchBar"></div>
+    </nav>
+
+
+    <!-- Header -->
+
+    <div class="container-fluid px-4 py-3 d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">TV Shows</h2>
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">Genres</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Drama</a></li>
+          <li><a class="dropdown-item" href="#">Comedy</a></li>
+          <li><a class="dropdown-item" href="#">Action</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section: Trending Now -->
+    <div class="container-fluid px-4 mb-5">
+      <h5>Trending Now</h5>
+      <div id="trendingCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex gap-2">
+              <img src="assets/media/media0.webp" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media1.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media2.webp" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media4.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media5.webp" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex gap-2">
+              <img src="assets/media/media6.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media7.webp" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media8.webp" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media9.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media10.jpg" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#trendingCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#trendingCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Section: Watch It Again -->
+    <div class="container-fluid px-4 mb-5">
+      <h5>Watch It Again</h5>
+      <div id="watchCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex gap-2">
+              <img src="assets/media/media11.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media12.jpg" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media13.jpg" class="img-fluid rounded" alt="" />
+              <img src="ssets/media/media14.webp" class="img-fluid rounded" alt="" />
+              <img src="assets/media/media15.jpg" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex gap-2">
+              <img src="./assets/media/media16.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media17.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media18.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media19.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media20.jpg" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#watchCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#watchCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Section: New Releases -->
+    <div class="container-fluid px-4 mb-5">
+      <h5>New Releases</h5>
+      <div id="newCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex gap-2">
+              <img src="./assets/media/media21.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media22.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media23.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media24.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media25.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media26.webp" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex gap-2">
+              <img src="./assets/media/media27.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media28.jpg " class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media29.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media30.jpg" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media31.webp" class="img-fluid rounded" alt="" />
+              <img src="./assets/media/media32.jpg" class="img-fluid rounded" alt="" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#newCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-secondary px-4 py-4 small">
+      <div class="row">
+        <div class="col-md-3">
+          <p>Audio and Subtitles</p>
+          <p>Media Center</p>
+          <p>Privacy</p>
+          <p>Contact Us</p>
+        </div>
+        <div class="col-md-3">
+          <p>Audio Description</p>
+          <p>Investor Relations</p>
+          <p>Legal Notices</p>
+        </div>
+        <div class="col-md-3">
+          <p>Help Center</p>
+          <p>Jobs</p>
+          <p>Cookie Preferences</p>
+        </div>
+        <div class="col-md-3">
+          <p>Gift Cards</p>
+          <p>Terms of Use</p>
+          <p>Corporate Information</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
+      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
