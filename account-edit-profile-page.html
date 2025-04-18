@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/dist/css/style.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/dist/css/style.min.css" />
     <title>Netflix</title>
 </head>
 <style>
@@ -68,14 +68,14 @@
 
 <!-- Main Content -->
 <div class="container mt-4">
-  <h1 class="mb-4 ">Edit Profile</h1>
+  <h1 class="mb-4">Edit Profile</h1>
   <div class="row mb-4">
     <div class="col-md-2">
-      <div class="profile-img-wrapper">
-        <div class="profile-img"><img src="assets/kids_icon.png" alt="kids "></div>
-        <div class="edit-icon" title="Change photo">
-          ✎
-        </div>
+      <div class="mb-3 text-center">
+        <label for="profileImageInput">
+          <img src="assets/kids_icon.png" alt="Profile img" width="100" height="100" class="border border-0 rounded-1 " style="cursor: pointer;">
+        </label>
+        <input type="file" id="profileImageInput" class="d-none">
       </div>
     </div>
     <div class="col-md-10">
@@ -93,7 +93,7 @@
       <div class="mb-3">
         <label class="form-label">Maturity Settings:</label>
         <div class="d-flex align-items-center mb-1">
-          <button class="btn btn-dark btn-sm me-2">ALL MATURITY RATINGS</button>
+          <button class="btn btn-dark  btn-sm me-2">ALL MATURITY RATINGS</button>
           <small>Show titles of <strong>all maturity ratings</strong> for this profile.</small>
         </div>
         <button class="btn btn-outline-secondary btn-sm">EDIT</button>
@@ -124,6 +124,22 @@
   </div>
 </div>
 
+
+<script>
+  const input = document.getElementById('profileImageInput');
+  const preview = document.getElementById('profilePreview');
+
+  input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
 
 <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

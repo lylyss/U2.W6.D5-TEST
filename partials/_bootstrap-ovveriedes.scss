@@ -7,14 +7,69 @@
 
 // 2. Include any default variable overrides here
 
-// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+// Gutter (spazio tra colonne) ridotto
+/* $grid-gutter-width: 0.5rem; */
 
+// Bottoni con padding personalizzato
+/* $btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem; */
+
+// Raggio dei bordi per elementi pillola
+$badge-border-radius: 0rem;
+$input-border-radius: 0rem;
+$btn-border-radius: 0rem;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../bootstrap/scss/variables";
 @import "../bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
-// Estensione delle classi .fs-* da 1 a 10
 
+// Colori EPICODE e override dei colori Bootstrap
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "trasparent": #ffffff00,
+  )
+);
+
+/* // Stile card
+    $card-bg: $dark;
+    $card-color: $info;
+    
+    // Breakpoint aggiuntivi
+    $grid-breakpoints: map-merge(
+      $grid-breakpoints,
+      (
+        3xl: 1600px,
+        4xl: 1800px,
+        )
+        );
+        
+        $container-max-widths: map-merge(
+          $container-max-widths,
+          (
+            3xl: 1520px,
+            4xl: 1720px,
+            )
+            );
+            $font-sizes-custom: (
+              7: 0.875rem,
+              8: 0.75rem,
+              9: 0.625rem,
+              10: 0.5rem,
+              );
+              
+              // Estensione delle classi .border-* da 1 a 10
+              $border-widths-custom: (
+                6: 6px,
+                7: 7px,
+                8: 8px,
+                9: 9px,
+                10: 10px,
+                );
+                $font-sizes: map-merge($font-sizes, $font-sizes-custom);
+                $border-widths: map-merge($border-widths, $border-widths-custom); */
 // 5. Include remainder of required parts
 @import "../bootstrap/scss/maps";
 @import "../bootstrap/scss/mixins";
@@ -58,3 +113,21 @@
 @import "../bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+
+body {
+  background-color: #141414;
+  color: white;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  display: flex;
+  gap: 1rem;
+
+  img {
+    width: 240px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+}
