@@ -79,24 +79,24 @@ $epicode-ungradient: linear-gradient(
             3xl: 1520px,
             4xl: 1720px,
             )
-            );
-            $font-sizes-custom: (
-              7: 0.875rem,
-              8: 0.75rem,
-              9: 0.625rem,
-              10: 0.5rem,
-              );
-              
-              // Estensione delle classi .border-* da 1 a 10
-              $border-widths-custom: (
-                6: 6px,
-                7: 7px,
-                8: 8px,
-                9: 9px,
-                10: 10px,
-                );
-                $font-sizes: map-merge($font-sizes, $font-sizes-custom);
-                $border-widths: map-merge($border-widths, $border-widths-custom); */
+            ); */
+$font-sizes-custom: (
+  7: 0.875rem,
+  8: 0.75rem,
+  9: 0.625rem,
+  10: 0.5rem,
+);
+
+// Estensione delle classi .border-* da 1 a 10
+$border-widths-custom: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+$font-sizes: map-merge($font-sizes, $font-sizes-custom);
+$border-widths: map-merge($border-widths, $border-widths-custom);
 // 5. Include remainder of required parts
 @import "../bootstrap/scss/maps";
 @import "../bootstrap/scss/mixins";
