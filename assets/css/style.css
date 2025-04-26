@@ -2,8 +2,8 @@
 /* $grid-gutter-width: 0.5rem; */
 /* $btn-padding-y: 0.75rem;
 $btn-padding-x: 2.5rem; */
-.px-300-footer {
-  padding-inline: 300px !important;
+.px-large {
+  padding-inline: 10rem !important;
 }
 
 :root,
