@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Profile | Netflix</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/dist/css/style.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>Edit Profile | Netflix</title>
+
     <style>
       body {
         background-color: #141414;
@@ -51,6 +51,7 @@
         justify-content: center;
         cursor: pointer;
       }
+
       .bi-pencil-fill {
         font-size: 10px;
       }
@@ -59,15 +60,18 @@
         background-color: white;
         color: black;
       }
+
       select.form-select {
         background-color: transparent;
         color: white;
         border: none;
       }
+
       select.form-select option {
         background-color: #302d2d;
         color: white;
       }
+
       .custom-checkbox .form-check-input {
         background-color: transparent;
         border: 1px solid gray;
@@ -89,82 +93,103 @@
       }
     </style>
   </head>
+
   <body>
     <!-- Navbar -->
-    <nav class="navbar px-4">
+    <nav class="navbar px-3 py-0">
       <a class="navbar-brand" href="home.html">
         <img src="assets/netflix_logo.png" alt="Netflix Logo" height="50" />
       </a>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-4 mx-auto p-2" style="width: 50rem">
-      <h1 class="m-0" style="font-family: Arial, sans-serif">Edit Profile</h1>
-      <hr class="border-secondary m-0 mb-3" />
-      <div class="row mb-4">
-        <div class="col-md-2 text-center">
-          <div class="profile-img-wrapper mb-3 position-relative">
-            <label for="profileImageInput" style="cursor: pointer">
-              <img id="profilePreview" src="assets/kids_icon.png" alt="Profile img" class="profile-img" />
-              <div class="edit-icon">
-                <i class="bi bi-pencil-fill text-white"></i>
+    <main class="d-flex justify-content-center align-items-center">
+      <div class="container px-3" style="max-width: 600px">
+        <div class="container mt-4 px-3">
+          <h1 id="editProfileTitle" class="m-0" style="font-family: Arial, sans-serif">Edit Profile</h1>
+          <hr class="border-secondary m-0 mb-3" />
+
+          <div class="row mb-4">
+            <!-- Immagine profilo -->
+            <div class="col-12 col-md-3 text-center mb-3">
+              <div class="profile-img-wrapper position-relative mx-auto">
+                <label for="profileImageInput" style="cursor: pointer">
+                  <img id="profilePreview" src="assets/kids_icon.png" alt="Profile img" class="profile-img" />
+                  <div class="edit-icon">
+                    <i class="bi bi-pencil-fill text-white"></i>
+                  </div>
+                </label>
+                <input type="file" id="profileImageInput" class="d-none" />
               </div>
-            </label>
-            <input type="file" id="profileImageInput" class="d-none" />
-          </div>
-        </div>
-        <div class="col-md-10">
-          <input type="text" class="form-control mb-3 bg-secondary text-white border-0 rounded-0" placeholder="Profile Name" value="Strive Student" />
-
-          <div class="mb-3">
-            <label class="form-label col-2 rounded-0">Language:</label>
-            <select class="form-select text-white border rounded-0" style="background-color: transparent">
-              <option>English</option>
-              <option>Italian</option>
-              <option>Spanish</option>
-            </select>
-          </div>
-
-          <hr class="border-secondary my-3" />
-
-          <div class="mb-3">
-            <label class="form-label">Maturity Settings:</label>
-            <div class="d-flex align-items-center mb-1">
-              <button class="btn btn-dark btn-sm me-2 rounded-0">ALL MATURITY RATINGS</button>
-            </div>
-            <p>
-              <small>Show titles of <strong>all maturity ratings</strong> for this profile.</small>
-            </p>
-            <div></div>
-            <button class="btn btn-outline-secondary btn-sm rounded-0 px-4">EDIT</button>
-          </div>
-
-          <hr class="border-secondary my-3" />
-
-          <div class="mb-4">
-            <label class="form-label">Autoplay controls</label>
-            <div class="form-check custom-checkbox">
-              <input class="form-check-input rounded-0" type="checkbox" checked id="autoplayEpisodes" />
-              <label class="form-check-label" for="autoplayEpisodes"> Autoplay next episode in a series on all devices. </label>
             </div>
 
-            <div class="form-check custom-checkbox">
-              <input class="form-check-input rounded-0" type="checkbox" checked id="autoplayPreviews" />
-              <label class="form-check-label" for="autoplayPreviews"> Autoplay previews while browsing on all devices. </label>
+            <!-- Form di modifica profilo -->
+            <div class="col-12 col-md-9">
+              <!-- Input nome -->
+              <input
+                type="text"
+                class="form-control mb-3 bg-custom-color-g text-white border-0 rounded-0 fw-bold"
+                placeholder="Profile Name"
+                value="Strive Student"
+              />
+
+              <!-- Select linguaggio -->
+              <div class="row">
+                <div class="mb-3 align-items-center">
+                  <label id="languageLabel" class="form-label mb-0" for="languageSelect">Language:</label>
+                  <select id="languageSelect" class="form-select text-white border rounded-0 py-0" style="width: auto; min-width: 150px">
+                    <option>English</option>
+                    <option>Italiano</option>
+                    <option>Espanol</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr class="border-secondary my-3" />
+
+              <!-- Maturity Settings -->
+              <div class="mb-3">
+                <label id="maturitySettingsLabel" class="form-label">Maturity Settings:</label>
+                <div class="d-flex mb-1">
+                  <button class="btn btn-dark btn-sm me-2 rounded-0">ALL MATURITY RATINGS</button>
+                </div>
+                <p>
+                  <small>Show titles of <strong>all maturity ratings</strong> for this profile.</small>
+                </p>
+                <button id="editBtnLabel" class="btn btn-outline-secondary btn-sm rounded-0 px-4">EDIT</button>
+              </div>
+
+              <hr class="border-secondary my-3" />
+
+              <!-- Autoplay Controls -->
+              <div class="mb-4">
+                <label id="autoplayControlsLabel" class="form-label">Autoplay controls</label>
+
+                <div class="form-check custom-checkbox">
+                  <input class="form-check-input rounded-0" type="checkbox" checked id="autoplayEpisodes" />
+                  <label id="autoplayNextLabel" class="form-check-label" for="autoplayEpisodes">Autoplay next episode in a series on all devices.</label>
+                </div>
+
+                <div class="form-check custom-checkbox">
+                  <input class="form-check-input rounded-0" type="checkbox" checked id="autoplayPreviews" />
+                  <label id="autoplayPrevLabel" class="form-check-label" for="autoplayPreviews">Autoplay previews while browsing on all devices.</label>
+                </div>
+              </div>
+            </div>
+            <hr class="border-secondary m-0 mb-3" />
+
+            <!-- Bottoni finali -->
+            <div class="d-flex flex-wrap p-0 gap-2">
+              <button id="saveButton" class="btn btn-outline-secondary fw-bold px-4 rounded-0">SAVE</button>
+              <button id="cancelButton" class="btn btn-outline-secondary fw-bold px-4 rounded-0">CANCEL</button>
+              <button id="deleteProfileButton" class="btn btn-outline-secondary fw-bold px-4 rounded-0">DELETE PROFILE</button>
             </div>
           </div>
-        </div>
-        <hr class="border-secondary m-0 mb-3" />
-
-        <div class="d-flex gap-2 p-0">
-          <button class="btn btn-outline-secondary fw-bold px-4 rounded-0">SAVE</button>
-          <button class="btn btn-outline-secondary fw-bold px-4 rounded-0">CANCEL</button>
-          <button class="btn btn-outline-secondary fw-bold px-4 rounded-0">DELETE PROFILE</button>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- Image Preview Script -->
+    <!-- Script per l'anteprima immagine profilo -->
     <script>
       const input = document.getElementById("profileImageInput");
       const preview = document.getElementById("profilePreview");
@@ -180,16 +205,8 @@
         }
       });
     </script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
-      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="assets/account.edit.js"></script>
   </body>
 </html>

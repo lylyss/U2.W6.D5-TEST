@@ -26,12 +26,22 @@ $btn-border-radius: 0rem;
 // 4. Include any default map overrides here
 
 // override dei colori Bootstrap
+
 $theme-colors: map-merge(
   $theme-colors,
   (
     "trasparent": #ffffff00,
   )
 );
+// Create your own map
+$custom-colors: (
+  "custom-color-g": #666666,
+  "custom-color-btn": #f3f3f3,
+  "custom-color-gray": #bdbdbd,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 .px-large {
   padding-inline: 10rem !important;
@@ -84,7 +94,6 @@ body {
   background-color: #141414;
   color: white;
 }
-
 .scrolling-wrapper {
   overflow-x: auto;
   display: flex;
